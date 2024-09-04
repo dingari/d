@@ -25,13 +25,7 @@
 
   xdg.enable = true; # Needed for fish interactiveShellInit hack
   programs = {
-    alacritty = {
-      enable = true;
-    };
-    lazygit = {
-      enable = true;
-      settings.gui.skipDiscardChangeWarning = true;
-    };
+    alacritty.enable = true;
     atuin = {
       enable = true;
       enableFishIntegration = true;
@@ -43,10 +37,13 @@
         show_help = false;
       };
     };
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+
+    lazygit.enable = true;
+    lazygit.gui.skipDiscardChangeWarning = true;
+
+    zoxide.enable = true;
+    zoxide.enableFishIntegration = true;
+
     direnv = {
       enable = true;
       nix-direnv.enable = true; # Adds FishIntegration automatically
