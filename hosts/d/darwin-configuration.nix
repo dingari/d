@@ -36,8 +36,10 @@ in
     };
   };
 
+  # NOTE: Here you can install packages from brew
   homebrew = {
     enable = true;
+    taps = builtins.attrNames inputs.nix-homebrew.taps;
     casks = [
       "raycast"
       "arc"
