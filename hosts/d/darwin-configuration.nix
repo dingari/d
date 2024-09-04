@@ -52,7 +52,10 @@ in
 
   programs.fish.enable = true;
 
-  home-manager.users.${user}.imports = [ flake.modules.home.daniel ];
+  home-manager.users.${user}.imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+    flake.modules.home.daniel
+  ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
