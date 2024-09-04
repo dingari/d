@@ -6,7 +6,7 @@
 let
   user = "genki";
 in
-{
+rec {
   imports = [
     inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
@@ -39,7 +39,7 @@ in
   # NOTE: Here you can install packages from brew
   homebrew = {
     enable = true;
-    taps = builtins.attrNames inputs.nix-homebrew.taps;
+    taps = builtins.attrNames nix-homebrew.taps;
     casks = [
       "raycast"
       "arc"
