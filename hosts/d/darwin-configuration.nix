@@ -1,5 +1,6 @@
 {
   inputs,
+  flake,
   ...
 }:
 let
@@ -9,8 +10,9 @@ in
 
   imports = [
     inputs.home-manager.darwinModules.home-manager
-    inputs.self.darwinModules.common
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    flake.modules.darwin.common
+    flake.modules.common.common
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -49,7 +51,7 @@ in
 
   programs.fish.enable = true;
 
-  home-manager.users.${user}.imports = [ inputs.self.homeModules.daniel ];
+  home-manager.users.${user}.imports = [ flake.modules.home.daniel ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
