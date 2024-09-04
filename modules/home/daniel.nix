@@ -36,34 +36,9 @@
     };
     fish = {
       enable = true;
-      plugins = [
-        {
-          name = "base16-fish";
-          src = pkgs.fetchFromGitHub {
-            owner = "tomyun";
-            repo = "base16-fish";
-            rev = "2f6dd973a9075dabccd26f1cded09508180bf5fe";
-            sha256 = "PebymhVYbL8trDVVXxCvZgc0S5VxI7I1Hv4RMSquTpA=";
-          };
-        }
-        {
-          name = "hydro";
-          src = pkgs.fetchFromGitHub {
-            owner = "jorgebucaran";
-            repo = "hydro";
-            rev = "a5877e9ef76b3e915c06143630bffc5ddeaba2a1";
-            sha256 = "nJ8nQqaTWlISWXx5a0WeUA4+GL7Fe25658UIqKa389E=";
-          };
-        }
-        {
-          name = "done";
-          src = pkgs.fetchFromGitHub {
-            owner = "franciscolourenco";
-            repo = "done";
-            rev = "37117c3d8ed6b820f6dc647418a274ebd1281832";
-            sha256 = "cScH1NzsuQnDZq0XGiay6o073WSRIAsshkySRa/gJc0=";
-          };
-        }
+      plugins = with pkgs.fishPlugins; [
+        hydro
+        done
       ];
       interactiveShellInit = # bash
         ''
@@ -95,7 +70,6 @@
       shellInit = # bash
         ''
           set fish_greeting # Disable greeting
-          fish_config theme choose "Catppuccin Mocha"
 
           # done configurations
           set -g __done_notification_command 'notify send -t "$title" -m "$message"'
