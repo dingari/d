@@ -13,6 +13,10 @@
 
     settings = {
       experimental-features = lib.mkDefault "nix-command flakes";
+      trusted-users = [
+        "@admin"
+        "genki"
+      ];
 
       substituters = [
         "https://genki.cachix.org"
@@ -27,20 +31,6 @@
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
     };
-  };
-
-  fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.backupFileExtension = "hm-backup";
-
-  nix = {
-    settings.trusted-users = [
-      "@admin"
-      "genki"
-    ];
-
     gc = {
       user = "root";
       automatic = true;
@@ -52,4 +42,10 @@
       options = "--delete-older-than 30d";
     };
   };
+
+  fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.backupFileExtension = "hm-backup";
 }
