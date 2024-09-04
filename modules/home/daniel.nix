@@ -6,6 +6,23 @@
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "23.05";
 
+  # NOTE: Use this to add packages available everywhere on your system
+  home.packages = with pkgs; [
+    neofetch
+    btop
+    wget
+    zip
+    magic-wormhole-rs
+    gh
+    zed-editor
+  ];
+
+  # THEME
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
   xdg.enable = true; # Needed for fish interactiveShellInit hack
   programs = {
     alacritty = {
@@ -195,14 +212,4 @@
       };
     };
   };
-
-  # NOTE: Use this to add packages available everywhere on your system
-  home.packages = with pkgs; [
-    neofetch
-    btop
-    wget
-    zip
-    magic-wormhole-rs
-    gh
-  ];
 }
