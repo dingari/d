@@ -7,7 +7,6 @@ let
   user = "genki";
 in
 {
-
   imports = [
     inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
@@ -23,7 +22,7 @@ in
     isHidden = false;
     home = "/Users/${user}";
     name = "${user}";
-    shell = "/run/current-system/sw/bin/bash";
+    shell = "/run/current-system/sw/bin/fish";
   };
 
   nix-homebrew = {
