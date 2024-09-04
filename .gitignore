@@ -1,6 +1,6 @@
 # direnv
-.direnv
-.devenv
+.direnv/
+.devenv/
 
 # nix
 result
