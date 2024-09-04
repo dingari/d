@@ -60,9 +60,6 @@
           set fish_cursor_replace_one underscore blink
           set fish_cursor_visual      block
 
-          alias l="eza -l -g -a --sort=modified --git --icons"
-          alias n="nvim"
-
           # To back up previous home manager configurations
           set -Ux HOME_MANAGER_BACKUP_EXT ~/.nix-bak
         '';
