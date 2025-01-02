@@ -8,9 +8,6 @@
   };
 
   nix = {
-    # TODO: https://github.com/cachix/devenv/issues/1364
-    package = pkgs.nixVersions.nix_2_23;
-
     settings = {
       experimental-features = lib.mkDefault "nix-command flakes";
       trusted-users = [
@@ -43,7 +40,7 @@
     };
   };
 
-  fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
