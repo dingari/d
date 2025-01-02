@@ -39,7 +39,7 @@
     };
 
     lazygit.enable = true;
-    lazygit.gui.skipDiscardChangeWarning = true;
+    lazygit.settings.gui.skipDiscardChangeWarning = true;
 
     zoxide.enable = true;
     zoxide.enableFishIntegration = true;
@@ -50,10 +50,6 @@
     };
     fish = {
       enable = true;
-      plugins = with pkgs.fishPlugins; [
-        hydro
-        done
-      ];
       interactiveShellInit = # bash
         ''
           # bind to ctrl-p in normal and insert mode, add any other bindings you want here too
