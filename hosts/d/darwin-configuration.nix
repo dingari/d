@@ -44,8 +44,6 @@
 
   programs.fish.enable = true;
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   # Enable tailscale. We manually authenticate when we want with out or delete all of this.
   services.tailscale.enable = true;
