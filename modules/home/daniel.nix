@@ -28,7 +28,6 @@
     flavor = "mocha";
   };
 
-  xdg.enable = true; # Needed for fish interactiveShellInit hack
   programs = {
     alacritty.enable = true;
     atuin = {
