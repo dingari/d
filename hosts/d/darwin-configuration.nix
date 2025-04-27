@@ -1,11 +1,9 @@
 {
   inputs,
   flake,
+  pkgs,
   ...
 }:
-let
-  user = "genki";
-in
 {
   imports = [
     inputs.home-manager.darwinModules.home-manager
@@ -17,11 +15,11 @@ in
 
   networking.hostName = "d";
 
-  users.users.${user} = {
+  users.users.genki = {
     isHidden = false;
-    home = "/Users/${user}";
-    name = "${user}";
     shell = "/run/current-system/sw/bin/fish";
+    home = "/Users/genki";
+    name = "genki";
   };
 
   # NOTE: Here you can install packages from brew
