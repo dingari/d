@@ -6,10 +6,9 @@
 let
   user = "genki";
 in
-rec {
+{
   imports = [
     inputs.home-manager.darwinModules.home-manager
-    inputs.nix-homebrew.darwinModules.nix-homebrew
     flake.modules.darwin.common
     flake.modules.common.common
   ];
@@ -25,24 +24,19 @@ rec {
     shell = "/run/current-system/sw/bin/fish";
   };
 
-  nix-homebrew = {
-    inherit user;
-    enable = true;
-    mutableTaps = false;
-    taps = with inputs; {
-      "homebrew/homebrew-core" = homebrew-core;
-      "homebrew/homebrew-cask" = homebrew-cask;
-      "homebrew/homebrew-bundle" = homebrew-bundle;
-    };
-  };
-
   # NOTE: Here you can install packages from brew
   homebrew = {
     enable = true;
-    taps = builtins.attrNames nix-homebrew.taps;
+    taps = [
+      # for things not in the hombrew repo, e.g.,
+    ];
     casks = [
+      # guis
       "raycast"
       "arc"
+    ];
+    brews = [
+      # clis and libraries
     ];
     masApps = {
       # `nix run nixpkgs#mas -- search <app name>`
