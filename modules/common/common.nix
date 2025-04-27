@@ -40,8 +40,4 @@
   };
 
   fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.backupFileExtension = "hm-backup";
 }
