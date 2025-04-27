@@ -17,9 +17,9 @@
 
   users.users.genki = {
     isHidden = false;
-    shell = "/run/current-system/sw/bin/fish";
     home = "/Users/genki";
     name = "genki";
+    shell = pkgs.fish;
   };
 
   # NOTE: Here you can install packages from brew
