@@ -42,8 +42,7 @@
     };
   };
 
-  programs.fish.enable = true;
-
+  programs.fish.enable = true; # Otherwise our shell won't be installed correctly
 
   # Enable tailscale. We manually authenticate when we want with out or delete all of this.
   services.tailscale.enable = true;
